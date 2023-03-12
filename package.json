@@ -1,5 +1,7 @@
 {
-  "name": "counter-classic",
+  "name": "SwitchbackClasic",
+  "author": "Steven Wickers (StevenWickers@gmail.com)",
+  "description": "This app uses Sugarbush switchback with Redux",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
