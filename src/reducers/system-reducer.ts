@@ -2,9 +2,7 @@ import { SystemActionEnum, SystemActions } from '../actions/system-actions'
 import { defaultSystemState, systemStateType } from '../models/system-mode'
 import { Message } from '../components/UI/Message'
 
-const initialState = defaultSystemState()
-
-const reducer = (state: systemStateType = initialState, action: SystemActions ) => {
+const reducer = (state: systemStateType = defaultSystemState(), action: SystemActions ) => {
   if (!state.isLoading) {
     Message(`System Reducer ${action.type}`, action.type)
   }

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
-import * as CounterActions from '../actions/counter-actions'
-import * as StatusActions from '../actions/status-actions'
 import { SystemDispatch, CounterDispatch } from '../dispatchers'
 import { ZoneTypes } from '../utilities/date-util'
+import * as CounterActions from '../actions/counter-actions'
+import * as StatusActions from '../actions/status-actions'
 import * as Selectors from '../selectors'
 import * as SystemActions from '../actions/system-actions'
 import TimeZone from './UI/TimeZone'
@@ -16,10 +16,10 @@ import logo from '../assets/logo-sm.png'
 
 const Application = () => {
   const dispatch = useDispatch()
-  const dispatchSystem = SystemDispatch()
-  const dispatchCounter = CounterDispatch()
-  const dataFetchRef = useRef(false)
+  const systemDispatch = SystemDispatch()
+  const counterDispatch = CounterDispatch()
 
+  const dataFetchRef = useRef(false)
   const currentState = useSelector(Selectors.selectState)
   const theme = useSelector(Selectors.selectTheme)
   const timeZone =  useSelector(Selectors.selectTimeZone)
@@ -31,29 +31,30 @@ const Application = () => {
 
   useEffect(() => {
     if (dataFetchRef.current) return
-    dispatchSystem(SystemActions.fetchSystemTheme())
+    /** using Sugarbush dispatch */
+    systemDispatch(SystemActions.fetchSystemTheme())
     dataFetchRef.current = true
     // eslint-disable-next-line
   }, [])
 
   const handleButtonClick = (e:any) => {
     if (e === ButtonType.plus) {
-      dispatchCounter(CounterActions.incrementCounter())
+      counterDispatch(CounterActions.incrementCounter())
     } else {
-      dispatchCounter(CounterActions.decrementCounter())
+      counterDispatch(CounterActions.decrementCounter())
     }
   }
 
   const handleSwitchChange = (value: boolean) => {
     const theme = value ? 'dark' : 'light'
-    dispatchSystem(SystemActions.setSystemTheme(theme))
+    systemDispatch(SystemActions.setSystemTheme(theme))
     setThemeChecked(value)
   }
 
   const handleTimezoneChange = (value: boolean) => {
     const zone = value ? ZoneTypes.UTC : ZoneTypes.Local
     setZoneChecked(value)
-    dispatchSystem(SystemActions.setSystemTime(zone))
+    systemDispatch(SystemActions.setSystemTime(zone))
   }
 
   const handleOnSelect = (e: any) => {
