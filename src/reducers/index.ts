@@ -7,7 +7,7 @@ const reducers = switchback({
   SystemState,
   CounterState,
   StatusState,
-}, true)
+})
 
 export default reducers
 export type RootState = ReturnType<typeof reducers>

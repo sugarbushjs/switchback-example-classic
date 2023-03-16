@@ -1,5 +1,5 @@
 {
-  "name": "SwitchbackClasic",
+  "name": "switchback-clasic",
   "author": "Steven Wickers (StevenWickers@gmail.com)",
   "description": "This app uses Sugarbush switchback with Redux",
   "version": "0.1.0",
@@ -22,6 +22,7 @@
     "react-toastify": "^9.1.1",
     "redux": "^4.2.1",
     "styled-components": "^5.3.8",
+    "sugarbush": "^1.7.1",
     "typescript": "^4.9.5"
   },
   "scripts": {
