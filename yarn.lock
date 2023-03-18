@@ -8459,10 +8459,10 @@ stylehacks@^5.1.1:
     browserslist "^4.21.4"
     postcss-selector-parser "^6.0.4"
 
-sugarbush@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/sugarbush/-/sugarbush-2.0.0.tgz#3d93f389d73566fa0b6d156e972532a248003e99"
-  integrity sha512-Wg7LjTIv3zC1mOaCV9uFzSYn7O49rToeosPJqVLuZZfkHXuOq+AHAJJrmwjJjzs95XAo649Wye4AaDFroQFVsQ==
+sugarbush@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/sugarbush/-/sugarbush-2.1.1.tgz#8005bd574c5a360fe1c463e206adaca80278b5ec"
+  integrity sha512-z/YBhIi7iKZPsReqfjZppr59HjGZ19kaZaYCExdHDFSlQSStI532zrigTlecf9bXh8guQSEfmINFb8N2An8wQg==
 
 supports-color@^5.3.0, supports-color@^5.5.0:
   version "5.5.0"
